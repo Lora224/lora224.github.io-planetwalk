@@ -1,0 +1,126 @@
+/* ------------------------------------------------------------------
+   layout.css – minimal styling for the Three.js demo
+   ------------------------------------------------------------------ */
+
+/* Ensure the canvas fills the viewport */
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #000; /* fallback if Three.js clearColor fails */
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #e0e0e0;
+  }
+  
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* ─────────────────────────  UI Overlay  ─────────────────────────── */
+  
+  #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+  }
+  
+  #overlay button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.6rem;
+    background: #1976d2;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  #overlay button:hover {
+    background: #42a5f5;
+  }
+  
+  /* Help hint in the corner */
+  #hud {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    pointer-events: none;
+    opacity: 0.85;
+    z-index: 5;
+  }
+  
+  /* Cross‑hair in the center (optional) */
+  .crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    margin-top: -6px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 4;
+  }
+  
+  /* Debug dat.GUI / lil‑gui tweaks */
+  .lil-gui {
+    z-index: 20 !important;
+  }
+ /* ─── Intro screen ───────────────────────────────────────── */
+#intro{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    backdrop-filter:blur(10px);
+    background:linear-gradient(180deg,#0d1428 0%,#190a22 70%);
+    transition:opacity .8s ease;
+    z-index:9999;
+  }
+  #intro.fadeOut{ opacity:0; pointer-events:none; }
+  
+  #intro .card{
+    text-align:center;
+    color:#e5efff;
+    font-family:'Gill Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  #intro h1{
+    font-size:4rem;
+    letter-spacing:.05em;
+    margin:0 0 .4em;
+    color:#c5d4ff;
+    text-shadow:0 0 15px #3b6bff;
+  }
+  #intro h2{
+    font-size:1.2rem;
+    font-weight:400;
+    line-height:1.4;
+    margin:0;
+    color:#9db1ff;
+  }
+  #intro h2 .sub{ color:#d8a7ff; }
+  #intro .hint{
+    margin-top:1.8em;
+    font-size:.9rem;
+    opacity:.6;
+    letter-spacing:.1em;
+  }
+   
