@@ -116,7 +116,7 @@ const noise = new ImprovedNoise();
 let terrain, terrainGeo, heights=[];
 const tex = new THREE.TextureLoader();
 function t(name,repeat=16){
-  const m=tex.load(`assets/textures/${name}`);
+  const m=tex.load(`./assets/textures/${name}`);
   m.wrapS = m.wrapT = THREE.RepeatWrapping;
   m.repeat.set(repeat,repeat);
   return m;
@@ -156,7 +156,7 @@ function heightAt(x,z){
    ────────────────────────────────────────────────────────── */
 const gltf = new GLTFLoader();
 ['Space rover.glb','Space probe.glb','Planet.glb','Moon.glb'].forEach(f=>{
-  gltf.load(`assets/models/${f}`,g=>{
+  gltf.load(`./assets/models/${f}`,g=>{
     const root=g.scene||g.scenes?.[0]; if(!root) return;
     root.scale.multiplyScalar(5);
     root.traverse(n=>{if(n.isMesh){n.castShadow=n.receiveShadow=true;}});
